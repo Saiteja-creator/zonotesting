@@ -31,3 +31,4 @@ class ProductAssertion(BaseAssertion):
         pass
         # Here to verify specific results from Response Object
 
+
