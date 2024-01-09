@@ -86,8 +86,50 @@ class Orders(Base):
         return res
 
 
-    #add_to_cart()
-    #check_out()
+    def upload_order(self,workspaces):
+        customer_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
+
+        file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}",
+            params = {
+                    'customerId': workspaces["inviteId"],
+                    'importSource': 'upload',
+                    'parserType': 'C2D_ORDER'
+                },
+            headers={},
+            files = {'file': open(file_path, 'rb')}
+
+        )
+        logger.info(f"upload Order resStatus:{res.status_code}")
+        return res
+
+    def upload_add_order(self,workspaces,upload_order_data):
+        up_data = upload_order_data.json
+        poFile = None
+        data_list = []
+        for i in up_data:
+            print(i)
+            data_list.append(
+                {"productVariantId": i["productVariantId"], "quantity": i["unitQuantity"], "poFileLineId": i["id"]})
+            poFile = i["poFileId"]
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/additemtoactiveorder/{workspaces["principalWorkspaceId"]}",
+            payload={
+            "customerId": workspaces["inviteId"],
+            "sellerWorkspaceId":workspaces["principalWorkspaceId"],
+            "source": "upload",
+            "poFileId": poFile,
+            "lines": data_list
+            }
+        )
+
+        return res
+
+
 
 
 

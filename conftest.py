@@ -36,11 +36,20 @@ def pytest_configure(config):
 
 @pytest.fixture(scope="session",autouse=True)
 def setup(request):
-    setup=Settings(request)
+    setup = Settings(request)
     setup.logic_controller = Users(setup)
     setup.otp = setup.logic_controller.send_otp()
+
+    if (setup.otp["mfaStatus"]):
+        setup.mobile_otp = setup.logic_controller.verify_mobile_otp(setup.otp)
+        setup.token = setup.logic_controller.verify_email_otp(setup.otp,setup.mobile_otp)
+    else:
+        setup.token = setup.logic_controller.verify_otp(setup.otp)
+
+
+
     #mfaStatus for email pending
-    setup.token = setup.logic_controller.verify_otp(setup.otp)
+
     setup.logic_controller = Users(setup)
     setup.workspaces = setup.logic_controller.get_workspaces()
 
@@ -79,9 +88,11 @@ def return_orders(setup,workspaces_data,return_product):
 
     product_data_order=return_product.product_data
     orders = Orders(setup)
-    orders.get_orders_data=orders.get_orders(workspaces_data)
-    orders.add_to_cart_res=orders.add_to_cart(workspaces_data,product_data_order)
-    orders.check_out_res=orders.check_out(orders.add_to_cart_res.json,workspaces_data)
+    orders.get_orders_data = orders.get_orders(workspaces_data)
+    orders.add_to_cart_res = orders.add_to_cart(workspaces_data,product_data_order)
+    orders.check_out_res = orders.check_out(orders.add_to_cart_res.json,workspaces_data)
+    orders.upload_order = orders.upload_order(workspaces_data)
+    # orders.upload_add_order = orders.upload_add_order(workspaces_data,orders.upload_order)
 
     return orders
 

@@ -32,6 +32,39 @@ class Users(Base):
         )
         return res.json["token"]
 
+
+    def verify_mobile_otp(self,otp):
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/verifyotp",
+            payload={
+                "authChannel": "mobile",
+                "mobile": self.settings.dataset['user']['mobile'],
+                "otp": str(otp["mobile"]["otp"]),
+                "mfa_status": True
+            },
+            headers={"Content-Type": "application/json", "Authorization": f"Bearer {otp["temptoken"]}"}
+        )
+
+        return res.json
+
+    def verify_email_otp(self,otp,verify_mobile_otp):
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/verifyotp",
+            payload={
+                "authChannel": "email",
+                "email": verify_mobile_otp["email"],
+                "otp": str(otp["email"]["otp"]),
+                "mfa_status": True
+            },
+            headers={"Content-Type": "application/json", "Authorization": f"Bearer {verify_mobile_otp["temptoken"]}"}
+        )
+
+        return res.json["token"]
+
+
     def get_workspaces(self):
         res = self.send_request(
             Base.RequestMethod.GET,

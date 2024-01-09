@@ -36,6 +36,7 @@ class Base(object):
     def send_request(self,
                      method: RequestMethod = RequestMethod.GET,
                      payload=None,
+                     params=None,
                      chunk_size: int = 0,
                      cookies=None,
                      custom_url: str = None,
@@ -73,7 +74,7 @@ class Base(object):
                 custom_url, headers=_headers, cookies=cookies, stream=True)
         elif method is self.RequestMethod.POST:
             res = session_res.post(
-                custom_url, headers=_headers, cookies=cookies, stream=True, json=_payload, files=files)
+                custom_url, headers=_headers, cookies=cookies, stream=True, json=_payload, files=files, params=params)
         elif method is self.RequestMethod.PUT:
             res = session_res.put(custom_url, headers=_headers,
                                   cookies=cookies, stream=True, json=_payload, files=files)
