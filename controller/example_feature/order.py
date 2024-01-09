@@ -106,14 +106,16 @@ class Orders(Base):
         return res
 
     def upload_add_order(self,workspaces,upload_order_data):
+
         up_data = upload_order_data.json
         poFile = None
         data_list = []
         for i in up_data:
             print(i)
-            data_list.append(
-                {"productVariantId": i["productVariantId"], "quantity": i["unitQuantity"], "poFileLineId": i["id"]})
-            poFile = i["poFileId"]
+            if i["status"] == "MAPPED":
+                data_list.append(
+                    {"productVariantId": i["productVariantId"], "quantity": i["unitQuantity"], "poFileLineId": i["id"]})
+                poFile = i["poFileId"]
 
         res = self.send_request(
             Base.RequestMethod.POST,
@@ -128,6 +130,25 @@ class Orders(Base):
         )
 
         return res
+
+    def upload_checkout(self,workspaces,upload_data):
+        pofileList = []
+        for i in upload_data["orders"]:
+            pofileList.append(i["pofileId"])
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}",
+            payload={
+                "sellerWorkspaceId": workspaces["principalWorkspaceId"],
+                "customerId": workspaces["inviteId"],
+                "poFileIds": pofileList
+            }
+        )
+
+        return res
+
+
 
 
 
