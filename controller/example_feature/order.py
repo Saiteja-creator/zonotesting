@@ -1,4 +1,5 @@
 import pytest
+import json
 
 from controller.api_util.base_request import Base, BaseAssertion
 from controller.api_util.common_imports import *
@@ -89,7 +90,8 @@ class Orders(Base):
     def upload_order(self,workspaces):
         customer_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
 
-        file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+        # file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+        file_path=r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}",
@@ -102,20 +104,44 @@ class Orders(Base):
             files = {'file': open(file_path, 'rb')}
 
         )
-        logger.info(f"upload Order resStatus:{res.status_code}")
+
         return res
 
     def upload_add_order(self,workspaces,upload_order_data):
 
         up_data = upload_order_data.json
+        logging.info(f"upload_order_data_res{up_data}")
         poFile = None
         data_list = []
+        data_unmapped=[]
         for i in up_data:
-            print(i)
             if i["status"] == "MAPPED":
                 data_list.append(
                     {"productVariantId": i["productVariantId"], "quantity": i["unitQuantity"], "poFileLineId": i["id"]})
                 poFile = i["poFileId"]
+            else:
+                data_unmapped.append(i)
+        for each_map in data_unmapped:
+
+            resUnmapped = self.send_request(
+                Base.RequestMethod.POST,
+                custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspaces["principalWorkspaceId"]}?customerId={workspaces["inviteId"]}&pageNo=1&pageSize=20",
+                payload={
+                    "searchKey": each_map["uploadedProductName"],
+                    "includeFacets": True,
+                    "includeDivisions": True,
+                    "includeCollections": True,
+                    "includeCfas": True
+                    }
+            )
+
+            response_unmapped=resUnmapped.json
+            logging.warning(f"it is return the upload Order {json.dumps(response_unmapped, indent=4)}")
+            if response_unmapped["total"]!=0:
+                unmaped_object={"productVariantId": response_unmapped["products"][0]["productVariants"][0]["productVariantId"], "quantity": each_map["unitQuantity"], "poFileLineId": each_map["id"]}
+
+                data_list.append(unmaped_object)
+            logging.warning(f"return the length of data_list {(data_list)}")
 
         res = self.send_request(
             Base.RequestMethod.POST,
@@ -129,9 +155,11 @@ class Orders(Base):
             }
         )
 
+
         return res
 
     def upload_checkout(self,workspaces,upload_data):
+
         pofileList = []
         for i in upload_data["orders"]:
             pofileList.append(i["pofileId"])

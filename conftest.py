@@ -91,7 +91,7 @@ def return_orders(setup,workspaces_data,return_product):
     orders.upload_add_order = orders.upload_add_order(workspaces_data,orders.upload_order)
     orders.upload_checkout=orders.upload_checkout(workspaces_data,orders.upload_add_order.json)
 
-    return orders
+    return orders.upload_checkout
 
 
 
