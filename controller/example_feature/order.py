@@ -91,7 +91,7 @@ class Orders(Base):
         customer_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
 
         # file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
-        file_path=r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+        file_path = r"C:\Users\91954\Downloads\UAT PO.xlsx"
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}",
@@ -110,7 +110,7 @@ class Orders(Base):
     def upload_add_order(self,workspaces,upload_order_data):
 
         up_data = upload_order_data.json
-        logging.info(f"upload_order_data_res{up_data}")
+
         poFile = None
         data_list = []
         data_unmapped=[]
@@ -138,10 +138,13 @@ class Orders(Base):
             response_unmapped=resUnmapped.json
             logging.warning(f"it is return the upload Order {json.dumps(response_unmapped, indent=4)}")
             if response_unmapped["total"]!=0:
-                unmaped_object={"productVariantId": response_unmapped["products"][0]["productVariants"][0]["productVariantId"], "quantity": each_map["unitQuantity"], "poFileLineId": each_map["id"]}
+                value_quantity=each_map["unitQuantity"]
+                quantity = value_quantity if value_quantity>0 else response_unmapped["products"][0]["productVariants"][0]["minOrderQty"]
+
+                unmaped_object={"productVariantId": response_unmapped["products"][0]["productVariants"][0]["productVariantId"], "quantity": quantity, "poFileLineId": each_map["id"]}
 
                 data_list.append(unmaped_object)
-            logging.warning(f"return the length of data_list {(data_list)}")
+
 
         res = self.send_request(
             Base.RequestMethod.POST,

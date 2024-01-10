@@ -89,7 +89,7 @@ def return_orders(setup,workspaces_data,return_product):
     orders.check_out_res = orders.check_out(orders.add_to_cart_res.json,workspaces_data)
     orders.upload_order = orders.upload_order(workspaces_data)
     orders.upload_add_order = orders.upload_add_order(workspaces_data,orders.upload_order)
-    orders.upload_checkout=orders.upload_checkout(workspaces_data,orders.upload_add_order.json)
+    orders.upload_checkout = orders.upload_checkout(workspaces_data,orders.upload_add_order.json)
 
     return orders.upload_checkout
 
