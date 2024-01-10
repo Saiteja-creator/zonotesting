@@ -90,8 +90,8 @@ class Orders(Base):
     def upload_order(self,workspaces):
         customer_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
 
-        # file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
-        file_path = r"C:\Users\91954\Downloads\UAT PO.xlsx"
+        file_path = r"C:\Users\91954\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+        #file_path = r"C:\Users\91954\Downloads\UAT PO.xlsx"
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}",

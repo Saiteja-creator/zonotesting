@@ -49,10 +49,10 @@ def setup(request):
     setup.logic_controller = Users(setup)
     setup.workspaces = setup.logic_controller.get_workspaces()
 
-    yield  setup
+    yield setup
 
 
-@pytest.fixture
+@pytest.fixture(scope="session",autouse=True)
 def workspaces_data(setup):
     workspaces_data=(setup.logic_controller.get_workspaces()).json
     principal_dict = {}
@@ -63,23 +63,21 @@ def workspaces_data(setup):
 
     return principal_dict
 
-@pytest.fixture
+@pytest.fixture(scope="session",autouse=True)
 def return_product(setup,workspaces_data):
     product = Product(setup)
     product.product_data = product.get_Product(workspaces_data)
 
-
     return product
 
-
-@pytest.fixture
+@pytest.fixture(scope="session",autouse=True)
 def return_scheme(setup,workspaces_data):
     scheme = Scheme(setup)
     scheme.get_scheme_data = scheme.get_scheme(workspaces_data["principalWorkspaceId"])
 
     return scheme
 
-@pytest.fixture
+@pytest.fixture(scope="session",autouse=True)
 def return_orders(setup,workspaces_data,return_product):
 
     product_data_order=return_product.product_data
@@ -91,7 +89,7 @@ def return_orders(setup,workspaces_data,return_product):
     orders.upload_add_order = orders.upload_add_order(workspaces_data,orders.upload_order)
     orders.upload_checkout = orders.upload_checkout(workspaces_data,orders.upload_add_order.json)
 
-    return orders.upload_checkout
+    return orders
 
 
 
