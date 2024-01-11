@@ -47,3 +47,18 @@ pytest -x --env=STAGING --dataset={specfic_folder}/{test_data} testsuite/{specfi
 ```
 
 ---
+````
+API calls
+main_url=https://api-uat.beta.pharmconnect.com
+    1. send_otp : f"{self.settings.url_prefix}/sendotp"
+    2. verify_otp : f"{self.settings.url_prefix}/verifyotp"
+    3. workspaces : f"{self.settings.url_prefix}/workspaces"
+    4. get_product : f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=20&customerId={invited_id}"
+    5. get_scheme  : f"{self.settings.url_prefix}/commerce-v2/scheme/{principal_id}?pageNo=1&pageSize=20&skuCode=&sortDirection=&sortBy=&includeCFA=true&startDate=2023-12-05&endDate=2024-01-04&dispatchFilters=true&status=&promotionType=",
+    6. get_orders  : f"{self.settings.url_prefix}/commerce-v2/orders?customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}",
+    7. get_add_cart : f"{self.settings.url_prefix}/commerce-v2/orders/additemtoactiveorder/{workspaces["principalWorkspaceId"]}",
+    8. get_checkout : f"{self.settings.url_prefix}/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}",
+    9. upload_order :  f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
+    10. upload_add_item : f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}",
+    11. upload_chekcout : f"{self.settings.url_prefix}/commerce-v2/products/search/{workspaces["principalWorkspaceId"]}?customerId={workspaces["inviteId"]}&pageNo=1&pageSize=20",
+````
