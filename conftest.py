@@ -80,8 +80,7 @@ def return_scheme(setup,workspaces_data):
 
 @pytest.fixture(scope="module")
 def return_orders(setup,workspaces_data,return_product):
-
-    product_data_order=return_product.product_data
+    product_data_order = return_product.product_data
     orders = Orders(setup)
     orders.get_orders_data = orders.get_orders(workspaces_data)
 

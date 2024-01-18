@@ -19,7 +19,7 @@ def test_product_filter_search_name(setup,workspaces_data,return_product):
     search_key=return_product.product_data.json["products"][0]["productVariants"][0]["name"]
 
     filter_data={
-    "searchKey": "APRELIEF CAPSULES"
+    "searchKey": search_key
     }
     product_search_res=product_class.get_filter_product_data(workspaces_data,filter_data)
 

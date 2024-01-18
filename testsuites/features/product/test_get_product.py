@@ -7,7 +7,6 @@ import logging
 class TestProduct:
     def test_get_product(self,return_product):
         result = return_product.product_data
-        logger.error(f"return the the get_product data {result.json}")
         ProductAssertion.verify_response_code_with_201(result)
         ProductAssertion.verify_total_product(result)
         assert result.json["products"][0]["productVariants"][0]["productVariantId"], "Assertion failure verify_productVariantId body{}".format(result.json)

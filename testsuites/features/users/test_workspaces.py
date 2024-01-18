@@ -5,7 +5,7 @@ import pytest
 import logging
 def test_rat_get_users(setup):
     result = setup.workspaces
-    logger.error(f"verify_result{json.dumps(result.json,indent=4)}")
+
 
     UsersAssertion.verify_general_response_code_200(result)
     assert result.json[0]["id"], "Assertion failure verify_workspaces_id body{}".format(result.json)

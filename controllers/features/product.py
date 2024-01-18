@@ -29,6 +29,7 @@ class Product(Base):
         invited_id = workspaces_data["inviteId"]
         payload_template = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','data', 'product.json'))
         payload_json_data = read_json(payload_template)
+
         if addition_args:
             payload_json_data.update(addition_args)
         res = self.send_request(
