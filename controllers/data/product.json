@@ -1,0 +1,15 @@
+{
+    "searchKey": "",
+    "includeFacets": true,
+    "includeDivisions": true,
+    "includeCfas": true,
+    "skuCode": "",
+    "sortDirection": "ASC",
+    "sortBy": "",
+    "inventoryFilter": "",
+    "stockFilter": "",
+    "divisionIds": [],
+    "cfaIds": [],
+    "statusFilter": "",
+    "collectionIds": []
+}

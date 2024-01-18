@@ -1,15 +1,16 @@
 
 import pytest
 import logging
-from controller.settings import Settings
+from controllers.settings import Settings
 
-from controller.example_feature.users import Users
+from controllers.features.users import Users
 
-from controller.example_feature.product import Product
+from controllers.features.product import Product
 
-from controller.example_feature.scheme import Scheme
+from controllers.features.scheme import Scheme
 
-from controller.example_feature.order import Orders
+from controllers.features.order import *
+
 
 
 
@@ -40,7 +41,7 @@ def setup(request):
     setup.logic_controller = Users(setup)
     setup.otp = setup.logic_controller.send_otp()
 
-    if (setup.otp["mfaStatus"]):
+    if (setup.otp.json["mfaStatus"]):
         setup.mobile_otp = setup.logic_controller.verify_mobile_otp(setup.otp)
         setup.token = setup.logic_controller.verify_email_otp(setup.otp,setup.mobile_otp)
     else:
@@ -55,6 +56,7 @@ def setup(request):
 @pytest.fixture(scope="session")
 def workspaces_data(setup):
     workspaces_data=(setup.logic_controller.get_workspaces()).json
+
     principal_dict = {}
     for i in (workspaces_data):
         for j in (i["principal"]):
@@ -67,7 +69,6 @@ def workspaces_data(setup):
 def return_product(setup,workspaces_data):
     product = Product(setup)
     product.product_data = product.get_Product(workspaces_data)
-
     return product
 
 @pytest.fixture(scope="session")
@@ -86,12 +87,19 @@ def return_orders(setup,workspaces_data,return_product):
 
     orders.add_to_cart_res = orders.add_to_cart(workspaces_data,product_data_order)
     orders.check_out_res = orders.check_out(orders.add_to_cart_res.json,workspaces_data)
-    orders.upload_order = orders.upload_order(workspaces_data)
-    orders.upload_add_order = orders.upload_add_order(workspaces_data,orders.upload_order)
-    orders.upload_checkout = orders.upload_checkout(workspaces_data,orders.upload_add_order.json)
 
     return orders
 
+
+@pytest.fixture(scope="session")
+def return_upload_order(setup,workspaces_data,return_product):
+    upload_order=UploadOrders(setup)
+    upload_order.upload_order = upload_order.upload_order(workspaces_data)
+    upload_order.upload_add_order = upload_order.upload_add_order(workspaces_data, upload_order.upload_order)
+    upload_order.upload_checkout = upload_order.upload_checkout(workspaces_data, upload_order.upload_add_order.json)
+
+
+    return upload_order
 
 
 def pytest_runtest_setup(item):
