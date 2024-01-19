@@ -11,7 +11,6 @@ class Orders(Base):
 
 
     def get_orders(self,workspaces_data):
-
         client_workSpaceId = workspaces_data["clientWorkspaceId"]
         principal_workSpaceId = workspaces_data["principalWorkspaceId"]
         invite_workspaceId = workspaces_data["inviteId"]

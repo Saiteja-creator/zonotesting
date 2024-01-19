@@ -78,16 +78,10 @@ def return_scheme(setup,workspaces_data):
 
     return scheme
 
-@pytest.fixture(scope="module")
-def return_orders(setup,workspaces_data,return_product):
-    product_data_order = return_product.product_data
-    orders = Orders(setup)
-    orders.get_orders_data = orders.get_orders(workspaces_data)
 
-    orders.add_to_cart_res = orders.add_to_cart(workspaces_data,product_data_order)
-    orders.check_out_res = orders.check_out(orders.add_to_cart_res.json,workspaces_data)
 
-    return orders
+
+
 
 
 @pytest.fixture(scope="session")
