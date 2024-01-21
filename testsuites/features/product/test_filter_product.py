@@ -39,3 +39,6 @@ def test_product_filter_search_sku(setup,workspaces_data,return_product):
     assert product_search_res.json["products"][0]["productVariants"][0][
                "sku"] == search_key, "Assertion failure verify search_product_sku"
     ProductAssertion.verify_single_product(product_search_res)
+
+
+

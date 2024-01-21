@@ -48,13 +48,7 @@ class Orders(Base):
         return res
 
 
-    def add_to_cart(self,workspaces,product_data):
-        product_Data=product_data.json
-        data_list = []
-        for i in product_Data["products"]:
-            for j in i["productVariants"]:
-                data_list.append({"productVariantId": j["productVariantId"],"quantity": j["minOrderQty"],"operator": "add"})
-
+    def add_to_cart(self,workspaces,product_data,source_data):
 
         res = self.send_request(
             Base.RequestMethod.POST,
@@ -62,17 +56,14 @@ class Orders(Base):
             payload={
                 "customerId": workspaces["inviteId"],
                 "sellerWorkspaceId": workspaces["principalWorkspaceId"],
-                "source": "manual",
-                "lines": data_list
+                "source": source_data,
+                "lines": product_data
             }
         )
         return res
 
-    def check_out(self,orderData,workspaces):
-        pofileList=[]
-        for i in orderData["orders"]:
+    def check_out(self,pofileList,workspaces):
 
-            pofileList.append(i["pofileId"])
 
         res = self.send_request(
             Base.RequestMethod.POST,
@@ -82,6 +73,14 @@ class Orders(Base):
                 "customerId": workspaces["inviteId"],
                 "poFileIds": pofileList
             }
+        )
+        return res
+
+    def get_pofiles(self,workspaces_data):
+        res = self.send_request(
+            Base.RequestMethod.GET,
+            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/{workspaces_data["principalWorkspaceId"]}?customerId={workspaces_data["inviteId"]}&includeActiveOrders=true&includeSummary=true",
+
         )
         return res
 
@@ -148,22 +147,10 @@ class UploadOrders(Base):
                 unmaped_object={"productVariantId": response_unmapped["products"][0]["productVariants"][0]["productVariantId"], "quantity": quantity, "poFileLineId": each_map["id"]}
 
                 data_list.append(unmaped_object)
+        return data_list
 
 
-        res = self.send_request(
-            Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/additemtoactiveorder/{workspaces["principalWorkspaceId"]}",
-            payload={
-            "customerId": workspaces["inviteId"],
-            "sellerWorkspaceId":workspaces["principalWorkspaceId"],
-            "source": "upload",
-            "poFileId": poFile,
-            "lines": data_list
-            }
-        )
 
-
-        return res
 
     def upload_checkout(self,workspaces,upload_data):
 
