@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_workspaces.py:14 setup.token args: <controllers.api_util.base_request.Base.ResponseObject object at 0x000001AEB911EA80>

@@ -1,0 +1,59 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/checkout/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'poFileIds': ['707062d0-e758-4121-977c-a775c7e58b61']}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"status":"","statusCode":200,"orders":[{"id":38675,"status":"SubmittedByCustomer","refOrderNumber":"sunpc-16058"}],"info":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+[1m[31mERROR   [0m controllers.api_util.common_imports:test_scheme_order_add_to_cart.py:89 return the data_scheme_prioduct{'facets': [], 'taxCategory': {'id': 85, 'name': 'GST-12'}, 'enabled': True, 'price': 4479, 'MRP': 7600, 'PTR': 5429, 'isSpecial': False, 'sku': '000000000001074156', 'sortOrder': 0, 'id': 34996, 'taxCategoryId': 85, 'productId': 35611, 'name': 'CHERICOF SYRUP 60 ml STANLIFE', 'shortName': 'CHERICOF SYRUP 60 ml STANLIFE', 'shortDescription': 'CHERICOF SYRUP 60 ml STANLIFE', 'productVariantId': 34996, 'ean': None, 'erpId': '000000000001074156', 'ZINS': False, 'hsnCode': '30049099', 'upcCode': None, 'baseUom': 'BTL', 'warrentyInformation': '', 'condition': '', 'packSize': 1, 'minOrderQty': 72, 'maxOrderQty': 0, 'minRemShelfLife': 120, 'qtyMultiplier': 0, 'grossWeight': 6, 'netWeight': 6, 'volume': 0, 'division': [{'divisionCode': 'S6', 'divisionId': 'c678508b-c3b1-4f15-9504-cdb807ee249a', 'name': 'STANLIFE', 'headDivisionId': '69a8db3e-c42c-432e-9c43-44a7638aaa91'}], 'cfas': [{'cfaCode': '7401', 'cfaId': '5f5e113e-7a13-417f-8545-359bdd4a9ac5', 'supplierName': '7401-SPDL DEPOT-SILIGURI', 'minOrderQty': 10}], 'collections': ['med'], 'promotions': [{'id': 2451, 'name': 'CHERICOF COUGH FOR 60 [Min 72 @8.33%]', 'promotionType': 'product_discount', 'promotionCode': '0000000361-0009107058', 'enabled': True, 'startsAt': '2017-07-01T00:00:00.000Z', 'endsAt': '2024-03-31T00:00:00.000Z', 'productVariantId': 34996, 'discount': '8.33', 'discountType': 'products_percentage_discount', 'minQtyASC': 72, 'freeQtyASC': 0, 'promotionSubType': None, 'promotion': '8.33%'}], 'stock': 0, 'sales': 0, 'margin': '17.5%'}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796/2451
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"startsAt":"2017-07-01T00:00:00.000Z","endsAt":"2024-03-31T00:00:00.000Z","couponCode":null,"perCustomerUsageLimit":null,"name":"CHERICOF COUGH FOR 60 [Min 72 @8.33%]","enabled":true,"promotionCode":"0000000361-0009107058","promotionType":"product_discount","sku":["000000000001074156"],"skusX":["000000000001074156"],"skusY":["000000000001074156"],"pts":4886,"upc":"30049099","baseUom":"BTL","title":"CHERICOF SYRUP 60 ml STANLIFE","slabs":[{"code":"contains_products","args":[{"name":"minimumQty","value":72},{"name":"maximumQty","value":999999},{"name":"productVariantIds","value":"[\"34996\"]"},{"name":"entity","value":"product"},{"name":"discount","value":8.33},{"name":"stateCodes","value":"[]"},{"name":"customerCodes","value":"[]"}]}],"packSize":1,"ptr":5429,"mrp":7600,"minimumQty":72,"maximumQty":999999,"discountPercentage":"8.33","productVariantIds":"[\"34996\"]","qtyY":0,"id":2451,"discountPercentageUpto":8.33,"stateCodes":["ALL"],"customerCodes":["ALL"]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================

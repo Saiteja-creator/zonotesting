@@ -1,0 +1,14 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796?&includeCFA=true&startDate=&endDate=&pageNo=1&pageSize=20&promotionType=product_discount
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================

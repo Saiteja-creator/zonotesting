@@ -51,8 +51,13 @@ def setup(request):
 
     yield setup
 
+@pytest.fixture(scope="session",autouse=True)
+def totalWorkspaceData(setup):
+    total_workspaces_data = (setup.logic_controller.get_workspaces()).json
+    return total_workspaces_data
 
-@pytest.fixture(scope="session")
+
+@pytest.fixture(scope="session",autouse=True)
 def workspaces_data(setup):
     workspaces_data=(setup.logic_controller.get_workspaces()).json
 
@@ -64,16 +69,16 @@ def workspaces_data(setup):
 
     return principal_dict
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session",autouse=True)
 def return_product(setup,workspaces_data):
     product = Product(setup)
     product.product_data = product.get_Product(workspaces_data)
     return product
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session",autouse=True)
 def return_scheme(setup,workspaces_data):
     scheme = Scheme(setup)
-    scheme.get_scheme_data = scheme.get_scheme(workspaces_data["principalWorkspaceId"])
+    scheme.get_scheme_data = scheme.get_scheme(workspaces_data)
 
     return scheme
 
@@ -106,7 +111,8 @@ def pytest_runtest_setup(item):
             pytest.skip(
                 "test requires running on api version {}".format(version))
     else:
-        logging.warning("Not found marker of the api version")
-        logging.warning("Run test case by assigned api version as {}".format(
-            assigned_version if assigned_version else Settings.DEFAULT_API_VERSION))
+        pass
+        #logging.warning("Not found marker of the api version")
+        #logging.warning("Run test case by assigned api version as {}".format(
+            #assigned_version if assigned_version else Settings.DEFAULT_API_VERSION))
 

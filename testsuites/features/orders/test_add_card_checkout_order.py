@@ -1,34 +1,10 @@
 
 from controllers.features.order import *
 
-@pytest.fixture
-def test_pofile_checkout(setup,workspaces_data):
-    orderObj = Orders(setup)
-    order_profile = orderObj.get_pofiles(workspaces_data)
-    data_manual = []
-    for i in order_profile.json["files"]:
-        if i["importSource"] == "manual":
-            data_manual.append(i["id"])
-    #check the previous manual order
-    orderObj.check_out(data_manual,workspaces_data)
-    #get pofiles data
-    update_profile = orderObj.get_pofiles(workspaces_data)
-
-    data_clear_manual_order=[]
-    for k in update_profile.json["files"]:
-        if k["importSource"] == "manual":
-            data_manual.append(k["id"])
-    # data_clear_manual_order should be empty
-
-    return data_clear_manual_order
-
-
-
-
 
 @pytest.fixture
 def test_add_to_cart(test_pofile_checkout,return_product,workspaces_data,setup):
-    assert test_pofile_checkout==[],"assertion error, manual order not checkout"
+    assert test_pofile_checkout==[],"assertion error, manual order checkout"
     product_Data_res = return_product.product_data.json
     data_list = []
     for i in product_Data_res["products"]:
@@ -62,6 +38,7 @@ def test_checkout(test_add_to_cart,setup,workspaces_data):
     check_order_data=orderObj.get_orders(workspaces_data)
     #check Assertion is order add or not
     OrderAssertion.verify_response_code_with_201(check_out_res)
+
 
 
 

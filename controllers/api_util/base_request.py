@@ -53,7 +53,8 @@ class Base(object):
             logging.warning("should provide url when sending request")
 
         if payload is None:
-            logging.warning("should provide payload when sending request")
+            pass
+            #logging.warning("should provide payload when sending request")
         else:
             _payload = payload
 

@@ -1,0 +1,14 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796?&includeCFA=true&startDate=&endDate=&pageNo=1&pageSize=20&searchKey=000000000001120209
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"promotions":[{"startsAt":"2023-01-01T00:00:00.000Z","endsAt":"2024-03-31T00:00:00.000Z","couponCode":null,"enabled":true,"promotionCode":"0000000320-0009106978","promotionType":"product_discount","sku":["000000000001120209"],"skusX":["000000000001120209"],"skusY":["000000000001120209"],"pts":5046,"upc":"30049099","baseUom":"STR","title":"ZITOTEC-2004TABS","slabs":[{"code":"contains_products","args":[{"name":"minimumQty","value":100},{"name":"maximumQty","value":999999},{"name":"productVariantIds","value":"[\"32437\"]"},{"name":"entity","value":"product"},{"name":"discount","value":10},{"name":"stateCodes","value":"[]"},{"name":"customerCodes","value":"[]"}]}],"packSize":1,"ptr":5607,"mrp":7850,"minimumQty":100,"maximumQty":999999,"discountPercentage":"10.00","productVariantIds":"[\"32437\"]","qtyY":0,"id":2434,"discountPercentageUpto":10,"stateCodes":["ALL"],"customerCodes":["ALL"]}],"totalRecords":1,"division":[{"divisionCode":"S5","divisionId":"e6e293fb-d020-4957-8c26-9be5914211a9","name":"SPECTRA","headDivisionId":"69a8db3e-c42c-432e-9c43-44a7638aaa91"}],"cfa":[{"cfaCode":"7401","cfaId":"5f5e113e-7a13-417f-8545-359bdd4a9ac5","supplierName":"7401-SPDL DEPOT-SILIGURI","minOrderQty":15}],"startRecord":1,"endRecord":1}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================

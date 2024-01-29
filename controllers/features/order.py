@@ -3,7 +3,8 @@ import json
 
 from controllers.api_util.base_request import Base, BaseAssertion
 from controllers.api_util.common_imports import *
-
+from datetime import datetime
+today_date = datetime.today().strftime('%Y-%m-%d')
 class Orders(Base):
     def __init__(self,settings):
         Base.__init__(self,settings)
@@ -31,7 +32,7 @@ class Orders(Base):
             "includeInvoice": True,
             "includeStatus": True,
             "startDate": "2023-12-06",
-            "endDate": "2024-01-05",
+            "endDate": "2025-01-22",
             "searchKeyword": "",
             "filterModel": {
             "divisionIds": [],
@@ -56,6 +57,7 @@ class Orders(Base):
             payload={
                 "customerId": workspaces["inviteId"],
                 "sellerWorkspaceId": workspaces["principalWorkspaceId"],
+                "poFileLineId": None,
                 "source": source_data,
                 "lines": product_data
             }
@@ -83,6 +85,9 @@ class Orders(Base):
 
         )
         return res
+
+
+
 
 class UploadOrders(Base):
     def __init__(self, settings):

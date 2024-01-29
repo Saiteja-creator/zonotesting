@@ -1,0 +1,103 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/checkout/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'poFileIds': []}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"status":"","statusCode":200,"orders":[],"info":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/additemtoactiveorder/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'poFileLineId': None, 'source': 'manual', 'lines': [{'productVariantId': 35649, 'quantity': 15, 'operator': 'add'}, {'productVariantId': 35647, 'quantity': 9, 'operator': 'add'}, {'productVariantId': 35644, 'quantity': 20, 'operator': 'add'}, {'productVariantId': 35643, 'quantity': 14, 'operator': 'add'}, {'productVariantId': 35642, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35641, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35640, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35639, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35635, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35633, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35628, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35627, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35626, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35625, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35604, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35602, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35601, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35599, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35598, 'quantity': 96, 'operator': 'add'}, {'productVariantId': 35595, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35594, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35593, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35590, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35589, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35588, 'quantity': 2, 'operator': 'add'}, {'productVariantId': 35587, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35586, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35584, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35583, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35582, 'quantity': 3, 'operator': 'add'}, {'productVariantId': 35580, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35577, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35576, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35110, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35089, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35088, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35086, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35085, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35084, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35081, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35080, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 35078, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35077, 'quantity': 4, 'operator': 'add'}, {'productVariantId': 35044, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35043, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35038, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35037, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35036, 'quantity': 25, 'operator': 'add'}, {'productVariantId': 35035, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35034, 'quantity': 12, 'operator': 'add'}, {'productVariantId': 35033, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35032, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35031, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 35030, 'quantity': 12, 'operator': 'add'}, {'productVariantId': 35029, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35027, 'quantity': 12, 'operator': 'add'}, {'productVariantId': 35026, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35025, 'quantity': 6, 'operator': 'add'}, {'productVariantId': 35024, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35023, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35022, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35021, 'quantity': 12, 'operator': 'add'}, {'productVariantId': 35020, 'quantity': 9, 'operator': 'add'}, {'productVariantId': 35019, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35018, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35017, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35016, 'quantity': 9, 'operator': 'add'}, {'productVariantId': 35015, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35014, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35013, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35012, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35011, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35010, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35009, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35007, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35006, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35005, 'quantity': 12, 'operator': 'add'}, {'productVariantId': 35004, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35003, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35002, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35001, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 35000, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34999, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34998, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34997, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34996, 'quantity': 72, 'operator': 'add'}, {'productVariantId': 34995, 'quantity': 72, 'operator': 'add'}, {'productVariantId': 34511, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34507, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 34508, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34532, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 34497, 'quantity': 360, 'operator': 'add'}, {'productVariantId': 34495, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 34494, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 34498, 'quantity': 490, 'operator': 'add'}, {'productVariantId': 34496, 'quantity': 5, 'operator': 'add'}, {'productVariantId': 34510, 'quantity': 1, 'operator': 'add'}, {'productVariantId': 34486, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 34489, 'quantity': 10, 'operator': 'add'}, {'productVariantId': 34490, 'quantity': 10, 'operator': 'add'}]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/checkout/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'poFileIds': ['cfd9c1aa-ef75-4807-a170-fda862a69c52', 'cfd9c1aa-ef75-4807-a170-fda862a69c52']}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"status":"","statusCode":200,"orders":[{"id":38674,"status":"SubmittedByCustomer","refOrderNumber":"sunpc-16056"},{"id":38673,"status":"SubmittedByCustomer","refOrderNumber":"sunpc-16057"}],"info":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders?customerWorkspaceId=758dd161-619e-45d9-b0d8-965d234a137c&workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'workspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'pageNo': 1, 'skip': 1, 'pageSize': 20, 'sortBy': 'orderDate', 'sortDirection': 'DESC', 'includeCustomer': True, 'includeSummary': True, 'includeInvoice': True, 'includeStatus': True, 'startDate': '2023-12-06', 'endDate': '2025-01-22', 'searchKeyword': '', 'filterModel': {'divisionIds': [], 'headDivisionIds': [], 'cfaIds': [], 'status': [], 'customerIds': []}, 'includeProductInfo': True, 'includeCFA': True, 'includeDivision': True}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================

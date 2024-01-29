@@ -15,10 +15,10 @@ class Product(Base):
         invited_id = workspaces_data["inviteId"]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=20&customerId={invited_id}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=100&customerId={invited_id}",
             payload={}
         )
-        logger.warning(f"response of get_product {res.json}")
+        # logger.warning(f"response of get_product {res.json}")
 
 
 
@@ -40,6 +40,8 @@ class Product(Base):
         logger.warning(f"response of get_product {res.json}")
 
         return res
+
+
 
 
 

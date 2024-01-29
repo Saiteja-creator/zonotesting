@@ -8,6 +8,8 @@ def prepare_paramas(setup):
     userData=Users(setup)
 
 class TestGetUsers:
+
+
     def test_send_otp(self,setup):
         res=setup.otp
         UsersAssertion.verify_general_response_code_200(res)

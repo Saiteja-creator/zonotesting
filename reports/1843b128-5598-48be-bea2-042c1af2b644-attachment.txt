@@ -1,0 +1,14 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796?&includeCFA=true&startDate=&endDate=&pageNo=1&pageSize=20&searchKey=000000000001120401
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:101 {"promotions":[{"startsAt":"2017-07-01T00:00:00.000Z","endsAt":"2024-03-31T00:00:00.000Z","couponCode":null,"enabled":true,"promotionCode":"0000000314-0009106972","promotionType":"product_discount","sku":["000000000001120401"],"skusX":["000000000001120401"],"skusY":["000000000001120401"],"pts":57214,"upc":"30043919","baseUom":"VLS","title":"IVEPRED-1000INJ","slabs":[{"code":"contains_products","args":[{"name":"minimumQty","value":12},{"name":"maximumQty","value":999999},{"name":"productVariantIds","value":"[\"33391\"]"},{"name":"entity","value":"product"},{"name":"discount","value":16.67},{"name":"stateCodes","value":"[]"},{"name":"customerCodes","value":"[]"}]}],"packSize":1,"ptr":63571,"mrp":89000,"minimumQty":12,"maximumQty":999999,"discountPercentage":"16.67","productVariantIds":"[\"33391\"]","qtyY":0,"id":2429,"discountPercentageUpto":16.67,"stateCodes":["ALL"],"customerCodes":["ALL"]}],"totalRecords":1,"division":[{"divisionCode":"S2","divisionId":"e62841c8-a57e-456b-ac58-624f5688743c","name":"SEPHEUS","headDivisionId":"69a8db3e-c42c-432e-9c43-44a7638aaa91"}],"cfa":[{"cfaCode":"7401","cfaId":"5f5e113e-7a13-417f-8545-359bdd4a9ac5","supplierName":"7401-SPDL DEPOT-SILIGURI","minOrderQty":15}],"startRecord":1,"endRecord":1}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================

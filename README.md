@@ -63,3 +63,6 @@ main_url=https://api-uat.beta.pharmconnect.com
     11. upload_chekcout : f"{self.settings.url_prefix}/commerce-v2/products/search/{workspaces["principalWorkspaceId"]}?customerId={workspaces["inviteId"]}&pageNo=1&pageSize=20",
 ```` 
 
+#report Result 
+Please install requirements before run tests
+run the allure serve:allure serve reports

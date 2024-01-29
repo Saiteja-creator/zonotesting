@@ -1,0 +1,14 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:95 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 https://api-uat.beta.pharmconnect.com/commerce-v2/orders?customerWorkspaceId=758dd161-619e-45d9-b0d8-965d234a137c&workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 {'workspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'pageNo': 1, 'skip': 1, 'pageSize': 20, 'sortBy': 'orderDate', 'sortDirection': 'DESC', 'includeCustomer': True, 'includeSummary': True, 'includeInvoice': True, 'includeStatus': True, 'startDate': '2023-12-06', 'endDate': '2025-01-22', 'searchKeyword': '', 'filterModel': {'divisionIds': [], 'headDivisionIds': [], 'cfaIds': [], 'status': [], 'customerIds': []}, 'includeProductInfo': True, 'includeCFA': True, 'includeDivision': True}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:103 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 
+=================================
