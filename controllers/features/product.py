@@ -18,7 +18,7 @@ class Product(Base):
             custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=100&customerId={invited_id}",
             payload={}
         )
-        # logger.warning(f"response of get_product {res.json}")
+
 
 
 
@@ -37,7 +37,7 @@ class Product(Base):
             custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=20&customerId={invited_id}",
             payload=payload_json_data
         )
-        logger.warning(f"response of get_product {res.json}")
+
 
         return res
 

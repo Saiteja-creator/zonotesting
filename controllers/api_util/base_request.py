@@ -18,6 +18,7 @@ class Base(object):
             self.header = response.headers
             self.url = response.url
 
+
     class RequestMethod(str, Enum):
         GET = "GET"
         POST = "POST"

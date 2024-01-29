@@ -1,0 +1,73 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/checkout/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 {'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'poFileIds': []}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:102 {"status":"","statusCode":200,"orders":[],"info":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/additemtoactiveorder/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 {'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'poFileLineId': None, 'source': 'manual', 'lines': [{'productVariantId': 34996, 'quantity': 72, 'operator': 'add'}]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:102 {"orders":[{"id":38696,"status":"AddingItems","suggestedValue":"3224.88","suggestedValueWithTax":"3611.87","taxAmount":"386.99","discount":"293.04","fullFillmentLocationId":"5f5e113e-7a13-417f-8545-359bdd4a9ac5","CFA":"7401-SPDL DEPOT-SILIGURI","headDivisionName":"Cross Div Pharma","headDivisionId":"69a8db3e-c42c-432e-9c43-44a7638aaa91","pofileId":"768255fc-7686-4754-a94d-99fa07aa693b","importSource":"manual","orderLine":[{"id":1647979,"sku":"000000000001074156","skuName":"CHERICOF SYRUP 60 ml STANLIFE","divisionName":"STANLIFE","divisionId":"c678508b-c3b1-4f15-9504-cdb807ee249a","description":"CHERICOF SYRUP 60 ml STANLIFE","unitPrice":"48.86","productVariantId":34996,"quantity":72,"linePrice":"3517.92","linePriceWithTax":"3904.91","discountedLinePrice":"3224.88","discountedLinePriceWithTax":"3611.87","proratedLinePrice":"3224.88","proratedLinePriceWithTax":"3611.87","suggestedValue":"3224.88","suggestedQuantity":72,"changedValue":"3611.87","adjustments":[{"promotionId":2451,"promotionCode":"0000000361-0009107058","promotionType":"PROMOTION","lineDiscount":"293.04"}]}]}],"status":"Created","statusCode":201,"errors":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================

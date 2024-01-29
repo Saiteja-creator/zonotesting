@@ -27,9 +27,9 @@ class TestSchemeFilter:
 
             assert next_pts_value>=present_pts_value, "Assertion Failure,verify filter of pts_asc"
 
-            print(filter_pts_ASC.json["promotions"][i]["pts"])
 
-        logger.error(f'return the filter pts asc {json.dumps(filter_pts_ASC.json,indent=4)}')
+
+
 
     def test_pts_desc_res(self,workspaces_data,schemeClass):
         filter_data = {
@@ -74,8 +74,8 @@ class TestSchemeFilter:
         SchemeAssertion.verify_response_code_with_201(filter_pageSize)
         total_records_pageSize=filter_pageSize.json["endRecord"]-filter_pageSize.json["startRecord"]+1
         assert total_records_pageSize == pageSizeValue
-        logger.error(f"return total_records_pageSize{total_records_pageSize}")
-        logger.error(f'return the filter pageSize {json.dumps(filter_pageSize.json,indent=4)}')
+
+
 
 
 

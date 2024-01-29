@@ -1,0 +1,58 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/orders/checkout/8ef5d569-3419-44e5-bb33-3ecfd260f796
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 {'sellerWorkspaceId': '8ef5d569-3419-44e5-bb33-3ecfd260f796', 'customerId': '3eef6837-80e5-468d-b8f3-8c2cea04506a', 'poFileIds': ['768255fc-7686-4754-a94d-99fa07aa693b']}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:102 {"status":"","statusCode":200,"orders":[{"id":38696,"status":"SubmittedByCustomer","refOrderNumber":"sunpc-16079"}],"info":[]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&includeActiveOrders=true&includeSummary=true
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:104 Too large response body, skipped to print.
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796/2451
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:102 {"startsAt":"2017-07-01T00:00:00.000Z","endsAt":"2024-03-31T00:00:00.000Z","couponCode":null,"perCustomerUsageLimit":null,"name":"CHERICOF COUGH FOR 60 [Min 72 @8.33%]","enabled":true,"promotionCode":"0000000361-0009107058","promotionType":"product_discount","sku":["000000000001074156"],"skusX":["000000000001074156"],"skusY":["000000000001074156"],"pts":4886,"upc":"30049099","baseUom":"BTL","title":"CHERICOF SYRUP 60 ml STANLIFE","slabs":[{"code":"contains_products","args":[{"name":"minimumQty","value":72},{"name":"maximumQty","value":999999},{"name":"productVariantIds","value":"[\"34996\"]"},{"name":"entity","value":"product"},{"name":"discount","value":8.33},{"name":"stateCodes","value":"[]"},{"name":"customerCodes","value":"[]"}]}],"packSize":1,"ptr":5429,"mrp":7600,"minimumQty":72,"maximumQty":999999,"discountPercentage":"8.33","productVariantIds":"[\"34996\"]","qtyY":0,"id":2451,"discountPercentageUpto":8.33,"stateCodes":["ALL"],"customerCodes":["ALL"]}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================

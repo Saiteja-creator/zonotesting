@@ -144,7 +144,7 @@ class TestScheme:
         SchemeAssertion.verify_response_code_with_201(get_clear_filter)
         assert get_clear_filter.json["totalRecords"] == promotions
 
-        logger.error(f"return get_clear filter {get_clear_filter.json}")
+
 
 
 

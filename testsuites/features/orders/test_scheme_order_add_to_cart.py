@@ -86,7 +86,7 @@ class TestSchemeProduct:
 
     def test_scheme(self,workspaces_data,single_product_scheme_add_to_cart,schemeClass):
         data_scheme_product, data_list = single_product_scheme_add_to_cart
-        logger.error(f"return the data_scheme_prioduct{data_scheme_product}")
+
         scheme_code = data_scheme_product["promotions"][0]["id"]
         get_scheme_code_res=schemeClass.get_scheme_code(scheme_code,workspaces_data)
 

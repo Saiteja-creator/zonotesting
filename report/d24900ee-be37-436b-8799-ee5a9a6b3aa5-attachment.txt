@@ -1,0 +1,16 @@
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:96 
+=============URL=================
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:97 https://api-uat.beta.pharmconnect.com/commerce-v2/poFile/upload/8ef5d569-3419-44e5-bb33-3ecfd260f796?customerId=3eef6837-80e5-468d-b8f3-8c2cea04506a&importSource=upload&parserType=C2D_ORDER
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:98 
+============Payload==============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:99 None
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:100 
+============Response=============
+
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:102 {"statusCode":422,"message":"Product mapping failed","response":{"status":"Failed","statusCode":422,"message":"Product mapping failed"},"status":422,"options":{},"name":"UnprocessableEntityException","rollbackTransaction":false,"timestamp":"2024-01-29T13:28:53.513Z"}
+[32mINFO    [0m controllers.api_util.common_imports:base_request.py:105 
+=================================
+
+[31m[1mERROR   [0m root:base_request.py:114 Assertion Failure, The status code is not 201, body: {"statusCode":422,"message":"Product mapping failed","response":{"status":"Failed","statusCode":422,"message":"Product mapping failed"},"status":422,"options":{},"name":"UnprocessableEntityException","rollbackTransaction":false,"timestamp":"2024-01-29T13:28:53.513Z"}

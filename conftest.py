@@ -65,7 +65,7 @@ def workspaces_data(setup):
     for i in (workspaces_data):
         for j in (i["principal"]):
             principal_dict = j
-    logging.info(f"it's returns the principal_data {principal_dict}")
+
 
     return principal_dict
 
