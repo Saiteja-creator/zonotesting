@@ -81,7 +81,41 @@ class Orders(Base):
     def get_pofiles(self,workspaces_data):
         res = self.send_request(
             Base.RequestMethod.GET,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/poFiles/{workspaces_data["principalWorkspaceId"]}?customerId={workspaces_data["inviteId"]}&includeActiveOrders=true&includeSummary=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/poFiles/{workspaces_data["principalWorkspaceId"]}?customerId={workspaces_data["inviteId"]}&includeActiveOrders=true&includeSummary=true",
+
+        )
+        return res
+
+    def get_track_po(self,workspaces_data,payload=None):
+        default_payload={
+            "customerId": workspaces_data["inviteId"],
+            "includeSummary": True,
+        }
+        default_payload.update(payload)
+
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/trackPoFiles/{workspaces_data["principalWorkspaceId"]}",
+            payload=default_payload
+
+        )
+        return res
+
+
+    def get_pofile_details(self,workspaces_data,payload=None):
+        default_payload={
+            "includeInvoice": True,
+            "includePromotion": True,
+            "includeTax": True
+        }
+        default_payload.update(payload)
+
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/pofiles/details/{workspaces_data["principalWorkspaceId"]}",
+            payload=default_payload
 
         )
         return res

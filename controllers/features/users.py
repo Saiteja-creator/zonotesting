@@ -19,6 +19,7 @@ class Users(Base):
 
 #
     def verify_otp(self, otp):
+
         otp=otp.json
         res = self.send_request(
             Base.RequestMethod.POST,

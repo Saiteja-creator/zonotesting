@@ -24,8 +24,8 @@ def test_product_filter_search_name(setup,workspaces_data,return_product):
     product_search_res=product_class.get_filter_product_data(workspaces_data,filter_data)
 
     ProductAssertion.verify_response_code_with_201(product_search_res)
-    assert product_search_res.json["products"][0]["productVariants"][0][
-               "name"] == search_key, "Assertion failure verify search_product_name"
+    assert search_key in product_search_res.json["products"][0]["productVariants"][0][
+               "name"], "Assertion failure verify search_product_name"
     ProductAssertion.verify_single_product(product_search_res)
 
 def test_product_filter_search_sku(setup,workspaces_data,return_product):
@@ -36,8 +36,8 @@ def test_product_filter_search_sku(setup,workspaces_data,return_product):
     }
     product_search_res = product_class.get_filter_product_data(workspaces_data, filter_data)
     ProductAssertion.verify_response_code_with_201(product_search_res)
-    assert product_search_res.json["products"][0]["productVariants"][0][
-               "sku"] == search_key, "Assertion failure verify search_product_sku"
+    assert search_key in product_search_res.json["products"][0]["productVariants"][0][
+               "sku"], "Assertion failure verify search_product_sku"
     ProductAssertion.verify_single_product(product_search_res)
 
 

@@ -17,8 +17,8 @@ Please install requirements before run tests.
 ├── Jenkinsfile/ 			   # Daily Jenkins job configurations
 ├── config/                    # Configutations
 │   ├── setup.yml     
-├── controller/                    # all related model or libs
-   └── example_feature/
+├── controllers/                    # all related model or libs
+   └── features/
     └── users.py
 ├── api_util    # All common utils
 │   └── file_operations.py

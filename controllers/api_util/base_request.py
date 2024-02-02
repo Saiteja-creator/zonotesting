@@ -73,7 +73,7 @@ class Base(object):
 
         if method is self.RequestMethod.GET:
             res = session_res.get(
-                custom_url, headers=_headers, cookies=cookies, stream=True)
+                custom_url, headers=_headers, cookies=cookies, stream=True, params=params)
         elif method is self.RequestMethod.POST:
             res = session_res.post(
                 custom_url, headers=_headers, cookies=cookies, stream=True, json=_payload, files=files, params=params)

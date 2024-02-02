@@ -61,10 +61,17 @@ def totalWorkspaceData(setup):
 def workspaces_data(setup):
     workspaces_data=(setup.logic_controller.get_workspaces()).json
 
+
     principal_dict = {}
+
+
+
     for i in (workspaces_data):
+
+
         for j in (i["principal"]):
             principal_dict = j
+        break
 
 
     return principal_dict

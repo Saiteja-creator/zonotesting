@@ -1,5 +1,5 @@
 STAGING:
-  URL_PREFIX: https://api-uat.beta.pharmconnect.com
+  URL_PREFIX: https://api-qa.beta.pharmconnect.com
 
 PRODUCTION:
   URL_PREFIX: https://api.pharmconnect.com
