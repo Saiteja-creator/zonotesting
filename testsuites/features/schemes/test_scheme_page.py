@@ -1,8 +1,4 @@
-import json
-import allure
-
 from controllers.features.scheme import *
-from controllers.features.random_operations import generate_random_number
 
 
 @pytest.fixture(scope="module")

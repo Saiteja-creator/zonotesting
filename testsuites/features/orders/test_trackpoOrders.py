@@ -63,7 +63,7 @@ class TestOrderTrackPO:
         for i in filter_cfa_summary:
             if get_cfa == i["fullFillmentLocationId"]:
                 verify_cfa = True
-        assert verify_cfa
+        assert verify_cfa,"Assertion Failure,verify CFA"
 
 
 

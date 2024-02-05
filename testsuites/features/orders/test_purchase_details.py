@@ -1,6 +1,5 @@
-import pytest
 from controllers.features.order import *
-from controllers.features.random_operations import generate_random_number
+from controllers.api_util.random_operations import generate_random_number
 
 
 @pytest.fixture
@@ -54,9 +53,9 @@ class TestPurchaseOrderDetails:
         # logger.error(f"pofile_detials{pofile_details.json}")
 
 
-        assert single_track_pofile["id"] == pofile_details.json["pofileId"]
-        assert single_track_pofile["number"] == pofile_details.json["poNumber"]
-        #assert single_track_pofile["skuCount"] == int(pofile_details.json["skuCount"])
+        assert single_track_pofile["id"] == pofile_details.json["pofileId"],"Assertion Failure, Verify pofileId"
+        assert single_track_pofile["number"] == pofile_details.json["poNumber"],"Assertion Failure,Verify Ponumber"
+        assert single_track_pofile["skuCount"] == int(pofile_details.json["skuCount"]),"Assertion Failure,Verify Sku_code "
 
 
     def test_search_pofile_details(self,workspaces_data,order_class,get_pofile_details):

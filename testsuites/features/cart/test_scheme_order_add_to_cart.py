@@ -36,7 +36,7 @@ def single_product_scheme_add_to_cart(test_pofile_checkout,return_product,orderC
 
 
 
-    #get_add_to_cart_res = orderClass.Cart(workspaces_data,data_list,source)
+    #get_add_to_cart_res = orderClass.cart(workspaces_data,data_list,source)
 
     return [data_scheme_product,data_list]
 
@@ -49,7 +49,7 @@ class TestSchemeProduct:
         data_scheme_product, data_list=single_product_scheme_add_to_cart
         source="manual"
         add_cart_res=orderClass.add_to_cart(workspaces_data,data_list,source)
-        #verify Cart
+        #verify cart
         OrderAssertion.verify_response_code_with_201(add_cart_res)
 
         get_pofile_res=orderClass.get_pofiles(workspaces_data)

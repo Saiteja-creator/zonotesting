@@ -1,5 +1,5 @@
 from controllers.features.scheme import *
-from controllers.features.random_operations import generate_random_number
+from controllers.api_util.random_operations import generate_random_number
 
 
 @pytest.fixture(scope="module")

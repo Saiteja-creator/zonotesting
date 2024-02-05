@@ -46,7 +46,7 @@ class Scheme(Base):
 
 
 
-    #get_filter_on_click_scheme()
+
 
 
 

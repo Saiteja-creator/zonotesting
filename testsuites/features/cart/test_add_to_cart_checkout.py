@@ -20,11 +20,17 @@ def test_add_to_cart(test_pofile_checkout,return_product,workspaces_data,setup):
 
     OrderAssertion.verify_response_code_with_201(add_to_cart_res)
 
-    assert checked_pofile_data.json["files"][-1]["importSource"] == "manual", "Assertion failure verify Cart of manual orders"
+
+    assert checked_pofile_data.json["files"][-1]["importSource"] == "manual", "Assertion failure verify cart of manual orders"
+
 
     assert add_to_cart_res.json["orders"][0]["orderLine"][0]["productVariantId"]
     assert add_to_cart_res.json["orders"][0]["orderLine"][0]["productVariantId"]== product_Data_res["products"][0]["productVariants"][0]["productVariantId"]
     assert add_to_cart_res.json["orders"][0]["importSource"] == "manual", "Assertion failure verify_manual_order body{}".format(add_to_cart_res.json)
+
+    pofile_manual_res = checked_pofile_data.json["files"][-1]["lines"][-1]
+
+    #assertion conditions for verify, Is product add to add_to_cart (by pofile)
 
     return add_to_cart_res
 
@@ -39,8 +45,9 @@ def test_checkout(test_add_to_cart,setup,workspaces_data):
     orderObj = Orders(setup)
     check_out_res = orderObj.check_out(pofileList, workspaces_data)
     check_order_data=orderObj.get_orders(workspaces_data)
-    #check Assertion is order add or not
+
     OrderAssertion.verify_response_code_with_201(check_out_res)
+    # check Assertion is order add or not (by get_orders_details)
 
 
 

@@ -19,9 +19,6 @@ class Product(Base):
             payload={}
         )
 
-
-
-
         return res
 
     def get_filter_product_data(self,workspaces_data,addition_args):

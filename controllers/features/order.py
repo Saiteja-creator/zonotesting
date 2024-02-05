@@ -8,7 +8,7 @@ today_date = datetime.today().strftime('%Y-%m-%d')
 class Orders(Base):
     def __init__(self,settings):
         Base.__init__(self,settings)
-        self.settings=settings
+        self.settings = settings
 
 
     def get_orders(self,workspaces_data):
@@ -16,34 +16,14 @@ class Orders(Base):
         principal_workSpaceId = workspaces_data["principalWorkspaceId"]
         invite_workspaceId = workspaces_data["inviteId"]
 
+
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}",
             payload={
             "workspaceId": principal_workSpaceId,
             "customerId": invite_workspaceId,
-            "pageNo": 1,
-            "skip": 1,
-            "pageSize": 20,
-            "sortBy": "orderDate",
-            "sortDirection": "DESC",
-            "includeCustomer": True,
             "includeSummary": True,
-            "includeInvoice": True,
-            "includeStatus": True,
-            "startDate": "2023-12-06",
-            "endDate": "2025-01-22",
-            "searchKeyword": "",
-            "filterModel": {
-            "divisionIds": [],
-            "headDivisionIds": [],
-            "cfaIds": [],
-            "status": [],
-            "customerIds": []
-            },
-            "includeProductInfo": True,
-            "includeCFA": True,
-            "includeDivision": True
             }
         )
         return res
@@ -103,6 +83,7 @@ class Orders(Base):
         return res
 
 
+
     def get_pofile_details(self,workspaces_data,payload=None):
         default_payload={
             "includeInvoice": True,
@@ -123,11 +104,11 @@ class Orders(Base):
 
 
 
+
 class UploadOrders(Base):
     def __init__(self, settings):
         Base.__init__(self, settings)
         self.settings = settings
-
 
     def upload_order(self,workspaces):
         customer_url=f"{self.settings.url_prefix}/commerce-v2/poFile/upload/{workspaces["principalWorkspaceId"]}"
