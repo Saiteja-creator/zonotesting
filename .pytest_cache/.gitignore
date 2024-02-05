@@ -1,1 +1,4 @@
 # Created by pytest automatically.
+.pytest_cache/
+__pycache/
+.idea/
