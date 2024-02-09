@@ -18,6 +18,7 @@ def single_product_scheme_add_to_cart(test_pofile_checkout,return_product,orderC
     product_Data_res = return_product.product_data
     OrderAssertion.verify_response_code_with_201(product_Data_res)
 
+
     data_list = []
     get_single_scheme_product = False
     data_scheme_product=[]
@@ -47,12 +48,15 @@ def single_product_scheme_add_to_cart(test_pofile_checkout,return_product,orderC
 class TestSchemeProduct:
     def test_add_to_cart(self,single_product_scheme_add_to_cart,orderClass,workspaces_data):
         data_scheme_product, data_list=single_product_scheme_add_to_cart
+        assert data_scheme_product !=None , "Assertion Failure, their is no promotions or Schemes"
+
         source="manual"
         add_cart_res=orderClass.add_to_cart(workspaces_data,data_list,source)
         #verify cart
         OrderAssertion.verify_response_code_with_201(add_cart_res)
 
         get_pofile_res=orderClass.get_pofiles(workspaces_data)
+        logger.error(f"return the get_pofile_details{get_pofile_res.json}")
 
 
         product_pofile_res=get_pofile_res.json["files"][-1]["lines"][-1]

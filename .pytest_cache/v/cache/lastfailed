@@ -45,10 +45,12 @@
   "testsuites/features/Cart/test_delete.py::TestCart::test_delete_by_CFA": true,
   "testsuites/features/Cart/test_delete.py::TestCart::test_single_product_delete": true,
   "testsuites/features/product/test_filter_product.py::test_product_filter_search_name": true,
-  "testsuites/features/schemes/test_scheme_page.py::TestSchemePage::test_pageSize_change": true,
   "testsuites/features/orders/test_purchase_details.py::TestPurchaseOrderDetails::test_pofile_filter_by_subitted": true,
   "testsuites/features/Cart/test_scheme_order_add_to_cart.py::TestSchemeProduct::test_add_to_cart": true,
   "testsuites/features/Cart/test_scheme_order_add_to_cart.py::TestSchemeProduct::test_scheme": true,
-  "testsuites/features/orders/test_purchase_details.py::TestPurchaseOrderDetails::test_get_pofile_Details": true,
-  "testsuites/features/Cart/test_add_card_checkout_order.py::test_checkout": true
+  "testsuites/features/Cart/test_add_card_checkout_order.py::test_checkout": true,
+  "testsuites/features/orders/test_get_orders.py::TestProduct::test_get_orders": true,
+  "testsuites/features/cart/test_manual_delete_cart.py::TestCart::test_single_product_delete": true,
+  "testsuites/features/cart/test_manual_delete_cart.py::TestCart::test_delete_by_CFA": true,
+  "testsuites/features/orders/test_purchase_details.py::TestPurchaseOrderDetails::test_get_pofile_Details": true
 }

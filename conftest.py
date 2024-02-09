@@ -76,6 +76,7 @@ def workspaces_data(setup):
 
     return principal_dict
 
+
 @pytest.fixture(scope="session",autouse=True)
 def return_product(setup,workspaces_data):
     product = Product(setup)
@@ -95,15 +96,15 @@ def return_scheme(setup,workspaces_data):
 
 
 
-@pytest.fixture(scope="session")
-def return_upload_order(setup,workspaces_data,return_product):
-    upload_order=UploadOrders(setup)
-    upload_order.upload_order = upload_order.upload_order(workspaces_data)
-    upload_order.upload_add_order = upload_order.upload_add_order(workspaces_data, upload_order.upload_order)
-    upload_order.upload_checkout = upload_order.upload_checkout(workspaces_data, upload_order.upload_add_order.json)
-
-
-    return upload_order
+# @pytest.fixture(scope="session")
+# def return_upload_order(setup,workspaces_data,return_product):
+#     upload_order=UploadOrders(setup)
+#     upload_order.upload_order = upload_order.upload_order(workspaces_data)
+#     upload_order.upload_add_order = upload_order.upload_add_order(workspaces_data, upload_order.upload_order)
+#     upload_order.upload_checkout = upload_order.upload_checkout(workspaces_data, upload_order.upload_add_order.json)
+#
+#
+#     return upload_order
 
 
 def pytest_runtest_setup(item):

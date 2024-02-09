@@ -18,6 +18,7 @@ def test_pofile_checkout(setup,workspaces_data):
         if k["importSource"] == "manual":
             data_manual.append(k["id"])
     # data_clear_manual_order should be empty
+    assert len(data_clear_manual_order) ==0 , "Assertion Failure ,Manual checkout failure"
 
     return data_clear_manual_order
 

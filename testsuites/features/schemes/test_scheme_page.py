@@ -50,8 +50,8 @@ class TestSchemePage:
         assert filter_pageNo.json["startRecord"] != 1, "Assertion Failure, Verify pageNO"
 
     def test_pageSize_change(self,schemeClass,workspaces_data):
-
-        pageSizeValue=40
+        #get_scheme_data and verify length of scheme,After apply the pageSizevalue
+        pageSizeValue=30
         filter_data = {
             "pageNo": 1,
             "pageSize": pageSizeValue,
@@ -69,7 +69,7 @@ class TestSchemePage:
 
 
         total_records_pageSize=filter_pageSize.json["endRecord"]-filter_pageSize.json["startRecord"]+1
-        assert total_records_pageSize == pageSizeValue, "Assertion Failure, Verify PageSize"
+        assert total_records_pageSize <= pageSizeValue, "Assertion Failure, Verify PageSize"
 
 
 

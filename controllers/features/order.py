@@ -17,16 +17,56 @@ class Orders(Base):
         invite_workspaceId = workspaces_data["inviteId"]
 
 
+
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}",
             payload={
-            "workspaceId": principal_workSpaceId,
-            "customerId": invite_workspaceId,
-            "includeSummary": True,
+                "workspaceId": principal_workSpaceId,
+                "customerId":invite_workspaceId,
+                "pageNo": 1,
+                "skip": 1,
+                "pageSize": 20,
+                "sortBy": "orderDate",
+                "sortDirection": "DESC",
+                 "includeCustomer": True,
+                "includeSummary": True,
+                "includeInvoice": True,
+                "includeStatus": True,
+                "startDate": "2024-01-07",
+                "endDate": "2025-02-06",
+
+
             }
         )
         return res
+
+    def get_single_order_details(self, workspaces_data,single_order_id):
+        client_workSpaceId = workspaces_data["clientWorkspaceId"]
+        principal_workSpaceId = workspaces_data["principalWorkspaceId"]
+        invite_workspaceId = workspaces_data["inviteId"]
+
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{principal_workSpaceId}/{single_order_id}?includeInvoice=true",
+            payload={
+                "filter": {
+                    "divisionIds": []
+                },
+                "searchKey": "",
+                "includeInvoice": True,
+                "includeTax": True,
+                "includePromotions": True,
+                "sortDirection": "DESC",
+                "sortBy": "",
+                "customerId": invite_workspaceId
+            }
+        )
+        return res
+
+
+
 
 
     def add_to_cart(self,workspaces,product_data,source_data):
@@ -100,6 +140,40 @@ class Orders(Base):
 
         )
         return res
+
+    def get_download(self,workspaces_data,pofileId):
+        res = self.send_request(
+            Base.RequestMethod.GET,
+            custom_url=f"{self.settings.url_prefix}/poFile/download/{workspaces_data["principalWorkspaceId"]}?pofileId={pofileId}",
+
+        )
+        return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

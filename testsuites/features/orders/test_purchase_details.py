@@ -58,19 +58,7 @@ class TestPurchaseOrderDetails:
         assert single_track_pofile["skuCount"] == int(pofile_details.json["skuCount"]),"Assertion Failure,Verify Sku_code "
 
 
-    def test_search_pofile_details(self,workspaces_data,order_class,get_pofile_details):
-        product_title = get_pofile_details.json["lines"]
-        length = len(product_title)
-        generate_random_number_res = generate_random_number(length - 1)
-        sku_code = product_title[generate_random_number_res]["productVariant"]["translations"][0]["name"]
 
-
-
-        payload = {
-            "pofileId":get_pofile_details.json["pofileId"],
-            "searchKey": "393939393"
-        }
-        search_purchase_details_res = order_class.get_pofile_details(workspaces_data,payload)
 
 
 

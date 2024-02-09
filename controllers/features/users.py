@@ -13,7 +13,7 @@ class Users(Base):
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/sendotp",
             payload={"authChannel": "mobile",
-                     "mobile": self.settings.dataset['user']['mobile']}
+                     "mobile": self.settings.dataset['users']['mobile']}
         )
         return res
 
@@ -26,7 +26,7 @@ class Users(Base):
             custom_url=f"{self.settings.url_prefix}/verifyotp",
             payload={
                 "authChannel": "mobile",
-                "mobile": self.settings.dataset['user']['mobile'],
+                "mobile": self.settings.dataset['users']['mobile'],
                 "otp": str(otp["mobile"]["otp"])
             },
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {otp["temptoken"]}"}
@@ -35,13 +35,13 @@ class Users(Base):
 
 
     def verify_mobile_otp(self,otp):
-
+        otp = otp.json
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/verifyotp",
             payload={
                 "authChannel": "mobile",
-                "mobile": self.settings.dataset['user']['mobile'],
+                "mobile": self.settings.dataset['users']['mobile'],
                 "otp": str(otp["mobile"]["otp"]),
                 "mfa_status": True
             },
@@ -51,6 +51,7 @@ class Users(Base):
         return res.json
 
     def verify_email_otp(self,otp,verify_mobile_otp):
+        otp=otp.json
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/verifyotp",
