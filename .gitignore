@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -133,3 +134,13 @@ dist
 **/__pycache__/
 **/pytest_cache
 **/.DS_Store
+=======
+# Ignore Python cache directory
+__pycache__/
+
+# Ignore PyCharm IDE configuration files
+.idea/
+
+# Ignore pytest cache directory
+.pytest_cache/
+>>>>>>> 398dbaed0c147d367b6401d325f62bd45256de19
