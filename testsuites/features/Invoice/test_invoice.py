@@ -29,7 +29,7 @@ class TestInvoice:
     def test_search_invoice_do(self,get_invoice_res,invoice_obj,workspaces_data):
         invoice_data = get_invoice_res.json["invoices"]
         length = len(invoice_data)-1
-        assert length>=0,"Assertion Failure,Invoice doesn't have any data"
+        assert get_invoice_res.json["invoices"],"Assertion Failure,Invoice doesn't have any data"
         generate_no = generate_random_number(length)
         do_number = invoice_data[generate_no]["docNumber"][-3:]
         params = {
@@ -66,6 +66,16 @@ class TestInvoice:
         invoice_id = invoice_data[generate_no]["id"]
         get_single_invoice_res = invoice_obj.single_invoice(workspaces_data,invoice_id)
         InvoiceAssertion.verify_general_response_code_200(get_single_invoice_res)
+        lines=get_single_invoice_res.json["lines"]
+        assert lines, "Assertion Failure,Invoice details doesn't have any data"
+        #verify every value
+        for i in lines:
+            assert i["sku"], "Assertion Failure, Invoice details Invalid sku"
+            assert i["productTitle"],"Assertion Failure, Invoice details Invalid productTitle"
+
+
+
+        # logger.error(f"return the get_single_invoice_res{get_single_invoice_res.json}")
 
 
     def test_invoice_download(self,invoice_obj,get_invoice_res,workspaces_data):

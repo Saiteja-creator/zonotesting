@@ -24,11 +24,11 @@ class TestGetUsers:
 
     def test_verify_otp(self,setup):
         res =setup.token
-        assert res != None , "Assertion failure verify_token body{}".format(res)
-        # UsersAssertion.verify_general_response_code_200(res)
-        # UsersAssertion.verify_token(res)
-        # assert res.json["mobile"] == str(setup.dataset["users"]["mobile"]), "Assertion failure verify mobile No "
-        #
+
+        UsersAssertion.verify_general_response_code_200(res)
+        UsersAssertion.verify_token(res)
+        assert res.json["mobile"] == str(setup.dataset["users"]["mobile"]), "Assertion failure verify mobile No "
+
 
 
 

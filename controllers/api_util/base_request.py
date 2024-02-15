@@ -65,7 +65,7 @@ class Base(object):
             _headers = headers
 
         if hasattr(self.settings, "token"):  # checks for existence and non-emptiness
-            _headers["Authorization"] = f'Bearer {self.settings.token}'
+            _headers["Authorization"] = f'Bearer {self.settings.token.json["token"]}'
 
         # new request session
         res = None

@@ -12,7 +12,8 @@ def order_obj(setup):
 
 @pytest.fixture
 def get_single_reOrder(order_obj, workspaces_data):
-    get_order = order_obj.get_orders(workspaces_data)
+    payload={}
+    get_order = order_obj.get_orders(workspaces_data,payload)
     length = len(get_order.json["order"]) - 1
     generate_number = generate_random_number(length)
     single_order_id = get_order.json["order"][generate_number]["id"]
@@ -25,7 +26,8 @@ class TestOrders:
 
     def test_get_orders(self,setup,workspaces_data):
         orderObj=Orders(setup)
-        get_order=orderObj.get_orders(workspaces_data)
+        payload={}
+        get_order=orderObj.get_orders(workspaces_data,payload)
         OrderAssertion.verify_response_code_with_201(get_order)
 
 

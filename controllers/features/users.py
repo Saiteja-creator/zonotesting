@@ -31,7 +31,7 @@ class Users(Base):
             },
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {otp["temptoken"]}"}
         )
-        return res.json["token"]
+        return res
 
 
     def verify_mobile_otp(self,otp):
@@ -64,7 +64,7 @@ class Users(Base):
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {verify_mobile_otp["temptoken"]}"}
         )
 
-        return res.json["token"]
+        return res
 
 
     def get_workspaces(self):
@@ -104,7 +104,7 @@ class UsersAssertion(BaseAssertion):
 
     @classmethod
     def verify_token(cls,res: Base.ResponseObject):
-        cls.log_assert(res.json["token"] !=None, "Assertion Failure, verify_token body{}.".format(res.json))
+        cls.log_assert(res.json["token"], "Assertion Failure, verify_token body{}.".format(res.json))
 
 
 

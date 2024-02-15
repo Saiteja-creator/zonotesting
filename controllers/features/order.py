@@ -3,41 +3,44 @@ import json
 
 from controllers.api_util.base_request import Base, BaseAssertion
 from controllers.api_util.common_imports import *
-from datetime import datetime
-today_date = datetime.today().strftime('%Y-%m-%d')
+from controllers.api_util.date import *
+from controllers.api_util.date import *
+
 class Orders(Base):
     def __init__(self,settings):
         Base.__init__(self,settings)
         self.settings = settings
 
 
-    def get_orders(self,workspaces_data):
+    def get_orders(self,workspaces_data,payload):
         client_workSpaceId = workspaces_data["clientWorkspaceId"]
         principal_workSpaceId = workspaces_data["principalWorkspaceId"]
         invite_workspaceId = workspaces_data["inviteId"]
+        default_payload={
+            "workspaceId": principal_workSpaceId,
+            "customerId": invite_workspaceId,
+            "pageNo": 1,
+            "skip": 1,
+            "pageSize": 20,
+            "sortBy": "orderDate",
+            "sortDirection": "DESC",
+            "includeCustomer": True,
+            "includeSummary": True,
+            "includeInvoice": True,
+            "includeStatus": True,
+            "startDate": formatted_last_month_date,
+            "endDate": formatted_date,
+
+        }
+        default_payload.update(payload)
+
 
 
 
         res = self.send_request(
             Base.RequestMethod.POST,
             custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}",
-            payload={
-                "workspaceId": principal_workSpaceId,
-                "customerId":invite_workspaceId,
-                "pageNo": 1,
-                "skip": 1,
-                "pageSize": 20,
-                "sortBy": "orderDate",
-                "sortDirection": "DESC",
-                 "includeCustomer": True,
-                "includeSummary": True,
-                "includeInvoice": True,
-                "includeStatus": True,
-                "startDate": "2024-01-07",
-                "endDate": "2025-02-06",
-
-
-            }
+            payload=default_payload
         )
         return res
 

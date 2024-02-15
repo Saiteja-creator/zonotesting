@@ -42,7 +42,7 @@ class TestDownloadedFiles:
         json_data = df.to_json(orient="records")
 
         data = json.loads(json_data)
-        logger.error(f"return the json data {json.dumps(data,indent=4)}")
+        # logger.error(f"return the json data {json.dumps(data,indent=4)}")
         # logger.error(f"download_order_pofile{response_get_track_pofile}")
         # logger.error(f"return the length of data{len(data)}")
 
