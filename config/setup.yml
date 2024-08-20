@@ -1,6 +1,5 @@
 STAGING:
-  URL_PREFIX: https://api-qa.beta.pharmconnect.com
-
+  URL_PREFIX: https://api-qa.zono.digital
 UAT:
   URL_PREFIX: https://api-uat.beta.pharmconnect.com
 

@@ -13,7 +13,7 @@ class Scheme(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/scheme/{principal_id}?pageNo=1&pageSize=20&skuCode=&sortDirection=&sortBy=&includeCFA=true&startDate=&endDate=&dispatchFilters=true&status=&promotionType=",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/scheme/{principal_id}?sellerWorkspaceId={principal_id}&pageNo=1&pageSize=20&skuCode=&sortDirection=&sortBy=&includeCFA=true&startDate=&endDate=&dispatchFilters=true&status=&promotionType=",
             payload={}
         )
         return res
@@ -23,7 +23,7 @@ class Scheme(Base):
 
         res = self.send_request(
             Base.RequestMethod.GET,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/scheme/{principal_id}/{scheme_code}",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/scheme/{principal_id}/{scheme_code}",
         )
         return res
 
@@ -36,7 +36,7 @@ class Scheme(Base):
         principal_id = workspaces_data["principalWorkspaceId"]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/scheme/{principal_id}?&includeCFA=true",#&startDate=&endDate="",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/scheme/{principal_id}?sellerWorkspaceId={principal_id}&includeCFA=true",#&startDate=&endDate="",
             params=default_filters,
             payload=payload_value
         )

@@ -16,10 +16,11 @@ class Product(Base):
         res = self.send_request(
             Base.RequestMethod.POST,
 
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=500&customerId={invited_id}",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/products/search/{principal_id}?sellerWorkspaceId={principal_id}&pageNo=1&pageSize=20&customerId={invited_id}",
             payload={},
 
         )
+       
 
         return res
 
@@ -32,7 +33,7 @@ class Product(Base):
         payload_json_data.update(addition_args)
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{principal_id}?pageNo=1&pageSize=20&customerId={invited_id}",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/products/search/{principal_id}?sellerWorkspaceId={principal_id}&pageNo=1&pageSize=20&customerId={invited_id}",
             payload=payload_json_data
         )
 

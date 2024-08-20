@@ -39,7 +39,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}",
+            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders?sellerWorkspaceId={principal_workSpaceId}&customerWorkspaceId={workspaces_data["clientWorkspaceId"]}&workspaceId={workspaces_data["principalWorkspaceId"]}',
             payload=default_payload
         )
         return res
@@ -52,7 +52,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{principal_workSpaceId}/{single_order_id}?includeInvoice=true",
+            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders/details/{principal_workSpaceId}/{single_order_id}?includeInvoice=true&sellerWorkspaceId={principal_workSpaceId}',
             payload={
                 "filter": {
                     "divisionIds": []
@@ -76,7 +76,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/additemtoactiveorder/{workspaces["principalWorkspaceId"]}",
+            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders/additemtoactiveorder/{workspaces["principalWorkspaceId"]}?sellerWorkspaceId={workspaces["principalWorkspaceId"]}',
             payload={
                 "customerId": workspaces["inviteId"],
                 "sellerWorkspaceId": workspaces["principalWorkspaceId"],
@@ -92,7 +92,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}",
+            custom_url=f'{self.settings.url_prefix}/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}',
             payload={
                 "sellerWorkspaceId": workspaces["principalWorkspaceId"],
                 "customerId": workspaces["inviteId"],
