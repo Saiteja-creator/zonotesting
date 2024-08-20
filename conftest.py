@@ -39,7 +39,7 @@ def setup(request):
     setup = Settings(request)
     setup.logic_controller = Users(setup)
     setup.otp = setup.logic_controller.send_otp()
-
+   
     if (setup.otp.json["mfaStatus"]):
         setup.mobile_otp = setup.logic_controller.verify_mobile_otp(setup.otp)
         setup.token = setup.logic_controller.verify_email_otp(setup.otp,setup.mobile_otp)
@@ -79,8 +79,10 @@ def workspaces_data(setup):
 
 @pytest.fixture(scope="session",autouse=True)
 def return_product(setup,workspaces_data):
+    print(workspaces_data,"return the workspaceData")
     product = Product(setup)
     product.product_data = product.get_Product(workspaces_data)
+    print(product.product_data.json,"======sss")
     return product
 
 @pytest.fixture(scope="session",autouse=True)
@@ -102,8 +104,8 @@ def return_scheme(setup,workspaces_data):
 #     upload_order.upload_order = upload_order.upload_order(workspaces_data)
 #     upload_order.upload_add_order = upload_order.upload_add_order(workspaces_data, upload_order.upload_order)
 #     upload_order.upload_checkout = upload_order.upload_checkout(workspaces_data, upload_order.upload_add_order.json)
-#
-#
+
+
 #     return upload_order
 
 
