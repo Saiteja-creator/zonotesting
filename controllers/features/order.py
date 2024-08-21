@@ -17,21 +17,32 @@ class Orders(Base):
         principal_workSpaceId = workspaces_data["principalWorkspaceId"]
         invite_workspaceId = workspaces_data["inviteId"]
         default_payload={
-            "workspaceId": principal_workSpaceId,
-            "customerId": invite_workspaceId,
-            "pageNo": 1,
-            "skip": 1,
-            "pageSize": 20,
-            "sortBy": "orderDate",
-            "sortDirection": "DESC",
-            "includeCustomer": True,
-            "includeSummary": True,
-            "includeInvoice": True,
-            "includeStatus": True,
-            "startDate": formatted_last_month_date,
-            "endDate": formatted_date,
-
-        }
+    "workspaceId": principal_workSpaceId,
+    "customerId": invite_workspaceId,
+    "pageNo": 1,
+    "skip": 1,
+    "pageSize": 20,
+    "sortBy": "orderDate",
+    "sortDirection": "DESC",
+    "includeCustomer": True,
+    "includeSummary": True,
+    "includeInvoice": True,
+    "includeStatus": True,
+    "startDate": "2024-07-22T16:19:50+05:30",
+    "endDate": "2024-08-22T16:19:50+05:30",
+    "searchKeyword": "",
+    "filterModel": {
+        "divisionIds": [],
+        "headDivisionIds": [],
+        "cfaIds": [],
+        "status": [],
+        "customerIds": []
+    },
+    "includeProductInfo": True,
+    "includeCFA":True ,
+    "includeDivision": True
+}
+        
         default_payload.update(payload)
 
 
@@ -52,7 +63,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders/details/{principal_workSpaceId}/{single_order_id}?includeInvoice=true&sellerWorkspaceId={principal_workSpaceId}',
+            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders/details/{principal_workSpaceId}/{single_order_id}?includeInvoice=True&sellerWorkspaceId={principal_workSpaceId}',
             payload={
                 "filter": {
                     "divisionIds": []
@@ -92,7 +103,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f'{self.settings.url_prefix}/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}',
+            custom_url=f'{self.settings.url_prefix}/hub/commerce-v2/orders/checkout/{workspaces["principalWorkspaceId"]}?sellerWorkspaceId={workspaces["principalWorkspaceId"]}',
             payload={
                 "sellerWorkspaceId": workspaces["principalWorkspaceId"],
                 "customerId": workspaces["inviteId"],
@@ -104,7 +115,7 @@ class Orders(Base):
     def get_pofiles(self,workspaces_data):
         res = self.send_request(
             Base.RequestMethod.GET,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/poFiles/{workspaces_data["principalWorkspaceId"]}?customerId={workspaces_data["inviteId"]}&includeActiveOrders=true&includeSummary=true",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/poFiles/{workspaces_data["principalWorkspaceId"]}?sellerWorkspaceId={workspaces_data["principalWorkspaceId"]}&customerId={workspaces_data["inviteId"]}&includeActiveOrders=True&includeSummary=True",
 
         )
         return res
@@ -119,7 +130,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/trackPoFiles/{workspaces_data["principalWorkspaceId"]}",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/trackPoFiles/{workspaces_data["principalWorkspaceId"]}?sellerWorkspaceId={workspaces_data["principalWorkspaceId"]}",
             payload=default_payload
 
         )
@@ -138,7 +149,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"{self.settings.url_prefix}/commerce-v2/pofiles/details/{workspaces_data["principalWorkspaceId"]}",
+            custom_url=f"{self.settings.url_prefix}/hub/commerce-v2/pofiles/details/{workspaces_data["principalWorkspaceId"]}?sellerWorkspaceId={workspaces_data["principalWorkspaceId"]}",
             payload=default_payload
 
         )

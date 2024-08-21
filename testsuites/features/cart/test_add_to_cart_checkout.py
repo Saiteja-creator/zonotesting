@@ -44,7 +44,7 @@ def test_checkout(test_add_to_cart,setup,workspaces_data):
         pofileList.append(i["pofileId"])
     orderObj = Orders(setup)
     check_out_res = orderObj.check_out(pofileList, workspaces_data)
-    check_order_data=orderObj.get_orders(workspaces_data)
+    check_order_data=orderObj.get_orders(workspaces_data,payload={})
 
     OrderAssertion.verify_response_code_with_201(check_out_res)
     # check Assertion is order add or not (by get_orders_details)
